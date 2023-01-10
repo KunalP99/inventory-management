@@ -1,0 +1,15 @@
+Games Inventory App
+
+API Endpoints:
+
+GET    /              --> Home page (Welcome page)
+
+GET    /inventory     --> Gets all the games documents (Grid view of all games)
+
+POST   /inventory     --> Creates  a new games document
+
+GET    /inventory/:id --> Gets a single games document
+
+DELETE /inventory/:id --> Deletes a single game
+
+PATCH  /inventory/:id --> Updates a single game
