@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap");
+
+// Fonts
+$header-font-style: "Nanum Gothic", sans-serif;
+
+// Colours
+$accent-colour: #dd6031;
+
+// Spacing
+$xxs-spacing: 4px;
+$xs-spacing: 8px;
+$s-spacing: 12px;
+$md-spacing: 20px;
+$l-spacing: 32px;
+$xl-spacing: 52px;
+$xxl-spacing: 84px;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-center-horiz {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-center-vert {
+  display: flex;
+  align-items: center;
+}
