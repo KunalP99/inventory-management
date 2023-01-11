@@ -45,11 +45,51 @@ const createGame = async (req, res) => {
 };
 
 // DELETE a game
+const deleteGame = async (req, res) => {
+  // Grabbing ID property from the route parameter
+  const { id } = req.params;
+
+  // Checks if ID is valid
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: "Game could not be found" });
+  }
+
+  const game = await Inventory.findOneAndDelete({ _id: id });
+
+  // If game cannot be found then return error
+  if (!game) {
+    return res.status(404).json({ err: "Game could not be found" });
+  }
+
+  res.status(200).json(game);
+};
 
 // UPDATE a game
+const updateGame = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: "Game could not be found" });
+  }
+
+  const game = await Inventory.findOneAndUpdate(
+    { _id: id },
+    {
+      ...req.body,
+    }
+  );
+
+  if (!game) {
+    return res.status(404).json({ err: "Game could not be found" });
+  }
+
+  res.status(200).json(game);
+};
 
 module.exports = {
   getInventory,
   getGame,
   createGame,
+  deleteGame,
+  updateGame,
 };

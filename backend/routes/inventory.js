@@ -3,6 +3,8 @@ const {
   getInventory,
   getGame,
   createGame,
+  deleteGame,
+  updateGame,
 } = require("../controllers/inventoryController");
 const router = express.Router();
 
@@ -16,13 +18,9 @@ router.get("/:id", getGame);
 router.post("/", createGame);
 
 // DELETE a game
-router.delete("/:id", (req, res) => {
-  res.json({ message: "DELETE a game" });
-});
+router.delete("/:id", deleteGame);
 
 // UPDATE a game
-router.patch("/:id", (req, res) => {
-  res.json({ message: "UPDATE a game" });
-});
+router.patch("/:id", updateGame);
 
 module.exports = router;
