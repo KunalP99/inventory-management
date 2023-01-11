@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
+const indexRoute = require("./routes/index");
 const inventoryRoutes = require("./routes/inventory");
 
 const app = express();
@@ -15,13 +16,14 @@ app.use((req, res, next) => {
 });
 
 // Routes
+app.use("/", indexRoute);
 app.use("/api/inventory", inventoryRoutes);
 
 // Connect to database
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
-    // Runs server only once connected to database and on PORT
+    // Runs server only once connected to database and on PORT number
     app.listen(process.env.PORT, () =>
       console.log(
         "Connected to database and listening on port",

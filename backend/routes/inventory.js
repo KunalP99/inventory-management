@@ -1,4 +1,5 @@
 const express = require("express");
+const Inventory = require("../models/inventoryModel");
 
 const router = express.Router();
 
@@ -13,7 +14,18 @@ router.get("/:id", (req, res) => {
 });
 
 // POST a new game
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
+  const { title, copies, releaseDate } = req.body;
+
+  try {
+    // Creates a new document with 3 properties
+    const inventory = await Inventory.create({ title, copies, releaseDate });
+    // Sends the inventory document in json format and a status of 200 to say everything is ok
+    res.status(200).json(inventory);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+
   res.json({ message: "POST a new game" });
 });
 
