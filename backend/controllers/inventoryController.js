@@ -1,4 +1,4 @@
-const Inventory = require("../models/inventoryModel");
+const Inventory = require("../models/InventoryModel");
 const mongoose = require("mongoose");
 
 // GET whole inventory
@@ -31,12 +31,17 @@ const getGame = async (req, res) => {
 
 // CREATE a game
 const createGame = async (req, res) => {
-  const { title, copies, releaseDate } = req.body;
+  const { title, copies, releaseDate, imgUrl } = req.body;
 
   // Add document to database
   try {
     // Creates a new document with 3 properties
-    const inventory = await Inventory.create({ title, copies, releaseDate });
+    const inventory = await Inventory.create({
+      title,
+      copies,
+      releaseDate,
+      imgUrl,
+    });
     // Sends the inventory document in json format and a status of 200 to say everything is ok
     res.status(200).json(inventory);
   } catch (err) {

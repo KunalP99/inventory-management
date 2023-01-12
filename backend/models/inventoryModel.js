@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const inventorySchema = new Schema(
+const InventorySchema = new Schema(
   {
     title: {
       type: String,
@@ -20,4 +20,7 @@ const inventorySchema = new Schema(
   { timestamps: true } // Adds a 'createdAt property and a 'lastUpdated' property
 );
 
-module.exports = mongoose.model("Inventory", inventorySchema);
+// Adding imgUrl to Schema
+InventorySchema.add({ imgUrl: "string" });
+
+module.exports = mongoose.model("Inventory", InventorySchema);

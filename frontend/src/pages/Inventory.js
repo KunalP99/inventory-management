@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import GameDetails from "../components/GameDetails";
+import GameForm from "../components/GameForm";
 
 const Inventory = () => {
   const [inventory, setInventory] = useState(null);
@@ -19,8 +21,9 @@ const Inventory = () => {
   return (
     <div>
       <div className='inventory'>
+        <GameForm />
         {inventory &&
-          inventory.map((game) => <p key={game._id}>{game.title}</p>)}
+          inventory.map((game) => <GameDetails key={game._id} game={game} />)}
       </div>
     </div>
   );
