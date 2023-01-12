@@ -14,7 +14,7 @@ header {
 
     span {
       color: $accent-colour;
-      animation: animate 1s infinite steps(2, jump-none);
+      animation: header-step-anim 1s infinite steps(2, jump-none);
     }
     img {
       width: 60px;
@@ -22,7 +22,7 @@ header {
   }
 }
 
-@keyframes animate {
+@keyframes header-step-anim {
   0% {
     opacity: 0;
   }

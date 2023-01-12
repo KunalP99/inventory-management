@@ -2,12 +2,14 @@ require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const indexRoute = require("./routes/index");
 const inventoryRoutes = require("./routes/inventory");
 
 const app = express();
 
 // Middleware
+app.use(cors());
 // Any requests that comes in, checks if it has some body (data) to the request, which if it does, it will attach that to the request object
 app.use(express.json());
 app.use((req, res, next) => {

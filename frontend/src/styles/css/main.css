@@ -135,7 +135,7 @@ body {
 }
 
 .pages {
-  width: 1920px;
+  width: 1300px;
   margin: 0 auto;
   padding: 84px;
 }
@@ -158,14 +158,14 @@ header a {
 }
 header a span {
   color: #dd6031;
-  -webkit-animation: animate 1s infinite steps(2, jump-none);
-          animation: animate 1s infinite steps(2, jump-none);
+  -webkit-animation: header-step-anim 1s infinite steps(2, jump-none);
+          animation: header-step-anim 1s infinite steps(2, jump-none);
 }
 header a img {
   width: 60px;
 }
 
-@-webkit-keyframes animate {
+@-webkit-keyframes header-step-anim {
   0% {
     opacity: 0;
   }
@@ -174,7 +174,7 @@ header a img {
   }
 }
 
-@keyframes animate {
+@keyframes header-step-anim {
   0% {
     opacity: 0;
   }
