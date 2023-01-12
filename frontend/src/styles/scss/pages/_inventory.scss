@@ -1,0 +1,26 @@
+.container {
+  .show-hide-form {
+    border: none;
+    background-color: transparent;
+    display: block;
+    margin: 0 auto;
+
+    img {
+      width: 30px;
+    }
+  }
+
+  .inventory {
+    padding: $xxl-spacing;
+    display: grid;
+    justify-items: center;
+    gap: $l-spacing;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    img {
+      object-fit: cover;
+      width: 200px;
+      height: 300px;
+    }
+  }
+}

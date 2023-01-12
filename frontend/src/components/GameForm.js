@@ -37,36 +37,53 @@ const GameForm = () => {
   };
 
   return (
-    <form className='create' onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <h3>Add a New Game:</h3>
 
-      <label>Game Title:</label>
-      <input
-        type='text'
-        onChange={(e) => setTitle(e.target.value)}
-        value={title}
-      />
+      <div className='form-items-container'>
+        <div className='form-item'>
+          <label htmlFor='title'>Game Title:</label>
+          <input
+            type='text'
+            id='title'
+            onChange={(e) => setTitle(e.target.value)}
+            value={title}
+            placeholder
+          />
+        </div>
 
-      <label>Number of Copies:</label>
-      <input
-        type='number'
-        onChange={(e) => setCopies(e.target.value)}
-        value={copies}
-      />
+        <div className='form-item'>
+          <label htmlFor='copies'>Number of Copies:</label>
+          <input
+            type='number'
+            id='copies'
+            onChange={(e) => setCopies(e.target.value)}
+            value={copies}
+          />
+        </div>
 
-      <label>Release Date:</label>
-      <input
-        type='date'
-        onChange={(e) => setReleaseDate(e.target.value)}
-        value={releaseDate}
-      />
-      <label>Add optional image url:</label>
-      <input
-        type='text'
-        onChange={(e) => setImgUrl(e.target.value)}
-        value={imgUrl}
-      />
-      <button>Add Game</button>
+        <div className='form-item form-item-date'>
+          <label htmlFor='releaseDate'>Release Date:</label>
+          <input
+            type='date'
+            id='releaseDate'
+            onChange={(e) => setReleaseDate(e.target.value)}
+            value={releaseDate}
+          />
+        </div>
+
+        <div className='form-item'>
+          <label htmlFor='imgUrl'>Add optional image url:</label>
+          <input
+            type='text'
+            id='imgUrl'
+            onChange={(e) => setImgUrl(e.target.value)}
+            value={imgUrl}
+          />
+        </div>
+        <button>Add Game</button>
+      </div>
+
       {error && <div className='error'>{error}</div>}
     </form>
   );

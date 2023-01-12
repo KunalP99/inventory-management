@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Nanum+Gothic:wght@700&display=swap");
 html,
 body,
 div,
@@ -137,23 +137,33 @@ body {
 .pages {
   width: 1300px;
   margin: 0 auto;
-  padding: 84px;
+  padding-top: 20px;
 }
 
+button {
+  cursor: pointer;
+}
+
+@media (max-width: 1512px) {
+  .pages {
+    width: auto;
+  }
+}
 header {
   background-color: #2f2f2f;
 }
 header .container {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 32px;
 }
 header a {
   text-decoration: none;
   color: white;
   font-family: "Nanum Gothic", sans-serif;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
 }
 header a span {
@@ -180,5 +190,92 @@ header a img {
   }
   100% {
     opacity: 100%;
+  }
+}
+@media (min-width: 550px) {
+  header a {
+    justify-content: flex-start;
+  }
+}
+.container .show-hide-form {
+  border: none;
+  background-color: transparent;
+  display: block;
+  margin: 0 auto;
+}
+.container .show-hide-form img {
+  width: 30px;
+}
+.container .inventory {
+  padding: 84px;
+  display: grid;
+  justify-items: center;
+  gap: 32px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.container .inventory img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 200px;
+  height: 300px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form h3 {
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  margin-bottom: 20px;
+  text-align: center;
+}
+form .form-item {
+  font-family: "Barlow", sans-serif;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+form label {
+  font-size: clamp(0.8rem, 2vw, 1.6rem);
+}
+form input {
+  padding: 4px;
+  width: 150px;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  border-radius: 16px;
+  border: none;
+  background-color: #d7d7d7;
+  padding: 12px;
+}
+form button {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  padding: 12px 0px;
+  border-radius: 16px;
+  border: none;
+  background-color: #dd6031;
+  color: white;
+  font-size: clamp(0.8rem, 2vw, 1.4rem);
+  transition: 300ms ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+form button:hover {
+  background-color: #9d3e1c;
+}
+
+@media (min-width: 700px) {
+  form input {
+    width: 300px;
+  }
+}
+@media (min-width: 1100px) {
+  form input {
+    width: 600px;
   }
 }

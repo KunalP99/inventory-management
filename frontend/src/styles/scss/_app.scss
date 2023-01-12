@@ -4,5 +4,15 @@ body {
 .pages {
   width: 1300px;
   margin: 0 auto;
-  padding: $xxl-spacing;
+  padding-top: $md-spacing;
+}
+
+button {
+  cursor: pointer;
+}
+
+@media (max-width: 1512px) {
+  .pages {
+    width: auto;
+  }
 }

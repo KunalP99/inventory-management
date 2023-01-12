@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import GameDetails from "../components/GameDetails";
 import GameForm from "../components/GameForm";
+import Plus from "../images/plus.svg";
+import Minus from "../images/minus.svg";
 
 const Inventory = () => {
   const [inventory, setInventory] = useState(null);
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     const fetchInventory = async () => {
@@ -18,12 +21,29 @@ const Inventory = () => {
 
     fetchInventory();
   }, []);
+
+  const toggleForm = () => {
+    if (showForm) {
+      setShowForm(false);
+    } else {
+      setShowForm(true);
+    }
+  };
   return (
-    <div>
-      <div className='inventory'>
-        <GameForm />
-        {inventory &&
-          inventory.map((game) => <GameDetails key={game._id} game={game} />)}
+    <div className='container'>
+      <button onClick={toggleForm} className='show-hide-form'>
+        {showForm ? (
+          <img src={Minus} alt='Hide form' />
+        ) : (
+          <img src={Plus} alt='Open form' />
+        )}
+      </button>
+      <div>
+        {showForm && <GameForm />}
+        <div className='inventory'>
+          {inventory &&
+            inventory.map((game) => <GameDetails key={game._id} game={game} />)}
+        </div>
       </div>
     </div>
   );

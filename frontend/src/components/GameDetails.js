@@ -8,7 +8,11 @@ const GameDetails = ({ game }) => {
       <h3>{game.title}</h3>
       <p>Copies: {game.copies}</p>
       <p>Release date: {formattedReleaseDate}</p>
-      <img src={game.imgUrl} alt='Cover art for game' />
+      <img
+        className='coverImg'
+        src={game.imgUrl}
+        alt={`Cover art for ${game.title}`}
+      />
     </div>
   );
 };
