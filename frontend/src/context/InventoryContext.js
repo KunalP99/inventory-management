@@ -5,15 +5,22 @@ export const InventoryContext = createContext();
 // 'state' => previous state before changes ... 'action' => the object passed into dispatch (Type property and payload property)
 export const inventoryReducer = (state, action) => {
   switch (action.type) {
+    // Populate the games array
     case "SET_GAMES":
       return {
         games: action.payload,
       };
 
+    // Add a new value into the games array
     case "CREATE_GAME":
       return {
         games: [action.payload, ...state.games],
       };
+    
+      case "DELETE_GAME":
+        return {
+          games: state.games.filter((game) => game._id !== action.payload._id)
+        }
     default:
       return state;
   }

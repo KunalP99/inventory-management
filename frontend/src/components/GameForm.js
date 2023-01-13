@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useInventoryContext } from "../hooks/useInventoryContext";
 
 const GameForm = () => {
+  const { dispatch } = useInventoryContext();
   const [title, setTitle] = useState("");
   const [copies, setCopies] = useState("");
   const [releaseDate, setReleaseDate] = useState("");
@@ -33,6 +35,8 @@ const GameForm = () => {
       setImgUrl("");
       setError(null);
       console.log("New game added", json);
+      // Adds the new game into the games array so that the UI and the database are in sync
+      dispatch({ type: "CREATE_GAME", payload: json });
     }
   };
 
