@@ -29,4 +29,33 @@
   .copies-text {
     text-align: center;
   }
+
+  .game-details-btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: $s-spacing;
+
+    .update-btn {
+      background-color: transparent;
+      border: none;
+
+      img {
+        width: 30px;
+      }
+    }
+
+    .delete-btn {
+      border: none;
+      background-color: transparent;
+
+      img {
+        width: 30px;
+      }
+    }
+  }
+
+  .edit-imgurl-input {
+    @include flex-center-horiz;
+    margin-top: $xs-spacing;
+  }
 }

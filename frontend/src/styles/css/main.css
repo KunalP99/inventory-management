@@ -213,7 +213,7 @@ header a img {
   gap: 32px;
   grid-template-columns: repeat(1, 1fr);
 }
-.container .inventory img {
+.container .inventory .cover-img {
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
@@ -224,6 +224,43 @@ header a img {
   border-radius: 16px;
   margin: 0 auto;
 }
+.container .delete-modal-container {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+}
+.container .delete-modal-container .delete-modal {
+  font-family: "Barlow", sans-serif;
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  text-align: center;
+}
+.container .delete-modal-container .delete-modal p {
+  margin-bottom: 20px;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+}
+.container .delete-modal-container .delete-modal p span {
+  color: red;
+  font-weight: 600;
+}
+.container .delete-modal-container .delete-modal .modal-btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.container .delete-modal-container .delete-modal .modal-btn-container button {
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
+  padding: 12px 32px;
+}
 
 @media (min-width: 650px) {
   .container .inventory {
@@ -233,6 +270,9 @@ header a img {
 @media (min-width: 1200px) {
   .container .inventory {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .container .delete-modal-container .delete-modal {
+    width: 30%;
   }
 }
 form {
@@ -321,4 +361,28 @@ form button:hover {
 .game-details .date-text,
 .game-details .copies-text {
   text-align: center;
+}
+.game-details .game-details-btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+.game-details .game-details-btn-container .update-btn {
+  background-color: transparent;
+  border: none;
+}
+.game-details .game-details-btn-container .update-btn img {
+  width: 30px;
+}
+.game-details .game-details-btn-container .delete-btn {
+  border: none;
+  background-color: transparent;
+}
+.game-details .game-details-btn-container .delete-btn img {
+  width: 30px;
+}
+.game-details .edit-imgurl-input {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
 }

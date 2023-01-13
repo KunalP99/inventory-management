@@ -16,11 +16,12 @@ export const inventoryReducer = (state, action) => {
       return {
         games: [action.payload, ...state.games],
       };
-    
-      case "DELETE_GAME":
-        return {
-          games: state.games.filter((game) => game._id !== action.payload._id)
-        }
+
+    case "DELETE_GAME":
+      return {
+        games: state.games.filter((game) => game._id !== action.payload._id),
+      };
+
     default:
       return state;
   }
@@ -30,6 +31,7 @@ export const inventoryReducer = (state, action) => {
 export const InventoryContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(inventoryReducer, {
     games: null,
+    showModal: false,
   });
   // All components will have access to state and dispatch
   return (

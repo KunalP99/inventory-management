@@ -52,7 +52,6 @@ const GameForm = () => {
             id='title'
             onChange={(e) => setTitle(e.target.value)}
             value={title}
-            placeholder
             required
           />
         </div>
