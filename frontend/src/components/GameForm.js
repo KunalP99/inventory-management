@@ -49,6 +49,7 @@ const GameForm = () => {
             onChange={(e) => setTitle(e.target.value)}
             value={title}
             placeholder
+            required
           />
         </div>
 
@@ -59,6 +60,7 @@ const GameForm = () => {
             id='copies'
             onChange={(e) => setCopies(e.target.value)}
             value={copies}
+            required
           />
         </div>
 
@@ -69,6 +71,7 @@ const GameForm = () => {
             id='releaseDate'
             onChange={(e) => setReleaseDate(e.target.value)}
             value={releaseDate}
+            required
           />
         </div>
 
@@ -84,7 +87,7 @@ const GameForm = () => {
         <button>Add Game</button>
       </div>
 
-      {error && <div className='error'>{error}</div>}
+      {error && <div className='error'>ERROR</div>}
     </form>
   );
 };

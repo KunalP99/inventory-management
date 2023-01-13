@@ -211,15 +211,30 @@ header a img {
   display: grid;
   justify-items: center;
   gap: 32px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(1, 1fr);
 }
 .container .inventory img {
+  display: block;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   width: 200px;
   height: 300px;
+  border-radius: 16px;
+  margin: 0 auto;
 }
 
+@media (min-width: 650px) {
+  .container .inventory {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .container .inventory {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 form {
   display: flex;
   flex-direction: column;
@@ -278,4 +293,32 @@ form button:hover {
   form input {
     width: 600px;
   }
+}
+.game-details {
+  font-family: "Barlow", sans-serif;
+  border-radius: 5px;
+}
+.game-details h3 {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: clip;
+}
+.game-details .date-text {
+  margin-bottom: 8px;
+  color: #dd6031;
+  font-size: 0.8rem;
+}
+.game-details .copies-text {
+  margin-top: 8px;
+}
+.game-details h3,
+.game-details .date-text,
+.game-details .copies-text {
+  text-align: center;
 }
