@@ -12,8 +12,6 @@ const GameDetails = ({ game }) => {
   const [releaseDate, setReleaseDate] = useState(formattedReleaseDate);
   const [imgUrl, setImgUrl] = useState(game.imgUrl);
 
-  console.log(game.releaseDate);
-
   // Format release date of each game
   const { dispatch } = useInventoryContext();
   const [showEdit, setShowEdit] = useState(false);
@@ -32,11 +30,12 @@ const GameDetails = ({ game }) => {
     }
   };
 
+  // Shows the edit inputs once edit button is pressed
   const handleShowEdit = () => {
     setShowEdit((prev) => !prev);
   };
 
-  // Replace the current ID game with the new values
+  // Edits the current game selected with the new values inputted by the user
   const handleEdit = async () => {
     const changes = { title, copies, releaseDate, imgUrl };
 
@@ -50,9 +49,13 @@ const GameDetails = ({ game }) => {
         },
       }
     );
+
     const json = await response.json();
+
     if (response.ok) {
       setShowEdit(false);
+      // Reload page so changes show straight away for the user
+      window.location.reload();
     }
   };
 

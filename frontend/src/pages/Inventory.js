@@ -37,6 +37,7 @@ const Inventory = () => {
           <img src={Plus} alt='Open form' />
         )}
       </button>
+
       <div>
         {showForm && <GameForm />}
         <div className='inventory'>

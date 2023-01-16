@@ -213,17 +213,6 @@ header a img {
   gap: 32px;
   grid-template-columns: repeat(1, 1fr);
 }
-.container .inventory .cover-img {
-  display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-  width: 200px;
-  height: 300px;
-  border-radius: 16px;
-  margin: 0 auto;
-}
 .container .delete-modal-container {
   position: fixed;
   z-index: 1;
@@ -337,6 +326,7 @@ form button:hover {
 .game-details {
   font-family: "Barlow", sans-serif;
   border-radius: 5px;
+  width: 200px;
 }
 .game-details h3 {
   text-align: center;
@@ -348,6 +338,7 @@ form button:hover {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: clip;
+  padding: 2.5px;
 }
 .game-details .date-text {
   margin-bottom: 8px;
@@ -362,6 +353,21 @@ form button:hover {
 .game-details .copies-text {
   text-align: center;
 }
+.game-details .cover-img {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 200px;
+  height: 300px;
+  border-radius: 16px;
+  margin: 0 auto;
+  transition: 300ms ease-in-out;
+}
+.game-details .cover-img:hover {
+  transform: scale(1.03, 1.03);
+}
 .game-details .game-details-btn-container {
   display: flex;
   justify-content: space-between;
@@ -373,6 +379,7 @@ form button:hover {
 }
 .game-details .game-details-btn-container .update-btn img {
   width: 30px;
+  transition: 400ms ease-in-out;
 }
 .game-details .game-details-btn-container .delete-btn {
   border: none;

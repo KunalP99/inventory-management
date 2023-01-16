@@ -16,16 +16,6 @@
     justify-items: center;
     gap: $l-spacing;
     grid-template-columns: repeat(1, 1fr);
-
-    .cover-img {
-      display: block;
-      object-fit: cover;
-      object-position: center;
-      width: 200px;
-      height: 300px;
-      border-radius: 16px;
-      margin: 0 auto;
-    }
   }
 
   .delete-modal-container {
