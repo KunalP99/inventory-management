@@ -1,13 +1,31 @@
 .container {
-  .show-hide-form {
-    border: none;
-    background-color: transparent;
-    display: block;
-    margin: 0 auto;
-    margin-top: $md-spacing;
+  font-family: $secondary-font-style;
 
-    img {
-      width: 30px;
+  .heading-btn-container {
+    margin-top: $md-spacing;
+    @include flex-center-vert;
+    justify-content: space-between;
+    padding: $md-spacing;
+
+    h3 {
+      font-weight: 600;
+      font-size: clamp(1.2rem, 4vw, 2.5rem);
+    }
+
+    button {
+      @include flex-center-vert;
+      background-color: $accent-colour;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      padding: $xs-spacing $md-spacing;
+      border-radius: 16px;
+      gap: $md-spacing;
+      font-weight: 600;
+      transition: 300ms ease-in-out;
+    }
+    button:hover {
+      background-color: $button-hover-colour;
     }
   }
 
@@ -30,7 +48,6 @@
     @include flex-center-vert;
 
     .delete-modal {
-      font-family: $secondary-font-style;
       background-color: #fefefe;
       margin: 15% auto;
       padding: 20px;

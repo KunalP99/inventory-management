@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useInventoryContext } from "../hooks/useInventoryContext";
+import Close from "../images/close.svg";
 
-const GameForm = () => {
+const GameForm = ({ toggleForm }) => {
   const { dispatch } = useInventoryContext();
   const [title, setTitle] = useState("");
   const [copies, setCopies] = useState("");
@@ -41,57 +42,65 @@ const GameForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h3>Add a New Game:</h3>
+    <div className='test-container'>
+      <div className='darken-screen'> </div>
+      <div className='sidebar'>
+        <form onSubmit={handleSubmit}>
+          <div className='sidebar-top'>
+            <h3>Add a new game</h3>
+            <img onClick={toggleForm} src={Close} alt='Close Sidebar' />
+          </div>
 
-      <div className='form-items-container'>
-        <div className='form-item'>
-          <label htmlFor='title'>Game Title:</label>
-          <input
-            type='text'
-            id='title'
-            onChange={(e) => setTitle(e.target.value)}
-            value={title}
-            required
-          />
-        </div>
+          <div className='form-items-container'>
+            <div className='form-item'>
+              <label htmlFor='title'>Game Title:</label>
+              <input
+                type='text'
+                id='title'
+                onChange={(e) => setTitle(e.target.value)}
+                value={title}
+                required
+              />
+            </div>
 
-        <div className='form-item'>
-          <label htmlFor='copies'>Number of Copies:</label>
-          <input
-            type='number'
-            id='copies'
-            onChange={(e) => setCopies(e.target.value)}
-            value={copies}
-            required
-          />
-        </div>
+            <div className='form-item'>
+              <label htmlFor='copies'>Number of Copies:</label>
+              <input
+                type='number'
+                id='copies'
+                onChange={(e) => setCopies(e.target.value)}
+                value={copies}
+                required
+              />
+            </div>
 
-        <div className='form-item form-item-date'>
-          <label htmlFor='releaseDate'>Release Date:</label>
-          <input
-            type='date'
-            id='releaseDate'
-            onChange={(e) => setReleaseDate(e.target.value)}
-            value={releaseDate}
-            required
-          />
-        </div>
+            <div className='form-item form-item-date'>
+              <label htmlFor='releaseDate'>Release Date:</label>
+              <input
+                type='date'
+                id='releaseDate'
+                onChange={(e) => setReleaseDate(e.target.value)}
+                value={releaseDate}
+                required
+              />
+            </div>
 
-        <div className='form-item'>
-          <label htmlFor='imgUrl'>Add optional image url:</label>
-          <input
-            type='text'
-            id='imgUrl'
-            onChange={(e) => setImgUrl(e.target.value)}
-            value={imgUrl}
-          />
-        </div>
-        <button>Add Game</button>
+            <div className='form-item'>
+              <label htmlFor='imgUrl'>Add image url (optional):</label>
+              <input
+                type='text'
+                id='imgUrl'
+                onChange={(e) => setImgUrl(e.target.value)}
+                value={imgUrl}
+              />
+            </div>
+            <button>Add Game</button>
+          </div>
+
+          {error && <div className='error'>ERROR</div>}
+        </form>
       </div>
-
-      {error && <div className='error'>ERROR</div>}
-    </form>
+    </div>
   );
 };
 

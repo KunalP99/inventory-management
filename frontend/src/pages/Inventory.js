@@ -3,11 +3,9 @@ import { useInventoryContext } from "../hooks/useInventoryContext";
 import GameDetails from "../components/GameDetails";
 import GameForm from "../components/GameForm";
 import Plus from "../images/plus.svg";
-import Minus from "../images/minus.svg";
 
 const Inventory = () => {
   const { games, dispatch } = useInventoryContext();
-  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     const fetchInventory = async () => {
@@ -25,21 +23,25 @@ const Inventory = () => {
   }, []);
 
   const toggleForm = () => {
-    setShowForm((prevToggle) => !prevToggle);
+    // Change styling of toggle to translate from right to left
+    const sidebar = document.querySelector(".sidebar");
+    const darken = document.querySelector(".darken-screen");
+
+    sidebar.classList.toggle("show-sidebar");
+    darken.classList.toggle("show-dark-screen");
   };
 
   return (
     <div className='container'>
-      <button onClick={toggleForm} className='show-hide-form'>
-        {showForm ? (
-          <img src={Minus} alt='Hide form' />
-        ) : (
-          <img src={Plus} alt='Open form' />
-        )}
-      </button>
-
+      <div className='heading-btn-container'>
+        <h3>My Games Collection</h3>
+        <button onClick={toggleForm}>
+          Add game
+          <img src={Plus} alt='Add a new game button' />
+        </button>
+      </div>
       <div>
-        {showForm && <GameForm />}
+        <GameForm toggleForm={toggleForm} />
         <div className='inventory'>
           {games &&
             games.map((game) => <GameDetails key={game._id} game={game} />)}
