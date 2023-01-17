@@ -137,7 +137,6 @@ body {
 .pages {
   width: 1300px;
   margin: 0 auto;
-  padding-top: 20px;
 }
 
 button {
@@ -197,11 +196,67 @@ header a img {
     justify-content: flex-start;
   }
 }
+.home-container {
+  font-family: "Barlow", sans-serif;
+}
+.home-container .hero-container {
+  padding: 20px;
+}
+.home-container .hero-container img {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  transition: 300ms ease-in-out;
+}
+.home-container .hero-container img:hover {
+  transform: scale(1.05, 1.05);
+}
+.home-container .hero-container h2 {
+  font-weight: 600;
+  text-align: center;
+  margin-top: 32px;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+}
+.home-container .hero-container .action-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+.home-container .hero-container .action-btn-container .action-btn {
+  text-decoration: none;
+  color: white;
+  background-color: #dd6031;
+  padding: 20px 52px;
+  border-radius: 16px;
+  transition: 300ms ease-in-out;
+  font-size: 1.5rem;
+}
+.home-container .hero-container .action-btn-container .action-btn:hover {
+  background-color: #9d3e1c;
+}
+
+@media (min-width: 700px) {
+  .home-container .hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .home-container .hero-container img {
+    width: 60%;
+  }
+  .home-container .hero-container h2 {
+    text-align: left;
+  }
+  .home-container .hero-container .action-btn-container {
+    justify-content: flex-start;
+  }
+}
 .container .show-hide-form {
   border: none;
   background-color: transparent;
   display: block;
   margin: 0 auto;
+  margin-top: 20px;
 }
 .container .show-hide-form img {
   width: 30px;
