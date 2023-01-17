@@ -207,6 +207,8 @@ header a img {
   display: block;
   margin: 0 auto;
   transition: 300ms ease-in-out;
+  -webkit-animation: fadeInImage 1s ease-in-out 1;
+          animation: fadeInImage 1s ease-in-out 1;
 }
 .home-container .hero-container img:hover {
   transform: scale(1.05, 1.05);
@@ -216,11 +218,17 @@ header a img {
   text-align: center;
   margin-top: 32px;
   font-size: clamp(2rem, 4vw, 3.8rem);
+  opacity: 0;
+  -webkit-animation: fadeIn 1s ease-in-out 0.8s 1 forwards;
+          animation: fadeIn 1s ease-in-out 0.8s 1 forwards;
 }
 .home-container .hero-container .action-btn-container {
   display: flex;
   justify-content: center;
   margin-top: 32px;
+  opacity: 0;
+  -webkit-animation: fadeIn 1s ease-in-out 1.5s 1 forwards;
+          animation: fadeIn 1s ease-in-out 1.5s 1 forwards;
 }
 .home-container .hero-container .action-btn-container .action-btn {
   text-decoration: none;
@@ -246,9 +254,46 @@ header a img {
   }
   .home-container .hero-container h2 {
     text-align: left;
+    margin-top: 0px;
   }
   .home-container .hero-container .action-btn-container {
     justify-content: flex-start;
+  }
+}
+@-webkit-keyframes fadeInImage {
+  0% {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes fadeInImage {
+  0% {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 .container .show-hide-form {
