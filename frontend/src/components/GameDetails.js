@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { useInventoryContext } from "../hooks/useInventoryContext";
 import moment from "moment";
 import Edit from "../images/edit.svg";
 import Delete from "../images/delete.svg";
-import { useState } from "react";
+import UnknownCover from "../images/unknown-cover.svg";
 
 const GameDetails = ({ game }) => {
   const formattedReleaseDate = moment(game.releaseDate).format("YYYY-MM-DD");
@@ -54,6 +55,7 @@ const GameDetails = ({ game }) => {
 
     if (response.ok) {
       setShowEdit(false);
+
       // Reload page so changes show straight away for the user
       window.location.reload();
     }
@@ -66,6 +68,7 @@ const GameDetails = ({ game }) => {
           <input
             type='text'
             value={title}
+            placeholder='Game Title'
             onChange={(e) => setTitle(e.target.value)}
           />
         ) : (
@@ -85,25 +88,26 @@ const GameDetails = ({ game }) => {
       </p>
       <img
         className='cover-img'
-        src={game.imgUrl}
+        src={game.imgUrl ? game.imgUrl : UnknownCover}
         alt={`Cover art for ${game.title}`}
       />
       {showEdit && (
         <div className='edit-imgurl-input'>
-          <p>Image Url: </p>
           <input
             type='text'
             value={imgUrl}
+            placeholder='Image URL'
             onChange={(e) => setImgUrl(e.target.value)}
           />
         </div>
       )}
       <p className='copies-text'>
-        Copies:{" "}
+        {!showEdit && "Copies: "}
         {showEdit ? (
           <input
             type='number'
             value={copies}
+            placeholder='Copies'
             onChange={(e) => setCopies(e.target.value)}
           />
         ) : (
@@ -118,7 +122,11 @@ const GameDetails = ({ game }) => {
           <img src={Edit} alt='Edit current game details' />
         </button>
       </div>
-      {showEdit && <button onClick={handleEdit}>Submit Changes</button>}
+      {showEdit && (
+        <button className='submit-changes-btn' onClick={handleEdit}>
+          Submit Changes
+        </button>
+      )}
     </div>
   );
 };

@@ -251,7 +251,7 @@ header a img {
   padding: 12px 32px;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 600px) {
   .container .inventory {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -379,7 +379,6 @@ form button:hover {
 }
 .game-details .game-details-btn-container .update-btn img {
   width: 30px;
-  transition: 400ms ease-in-out;
 }
 .game-details .game-details-btn-container .delete-btn {
   border: none;
@@ -387,6 +386,21 @@ form button:hover {
 }
 .game-details .game-details-btn-container .delete-btn img {
   width: 30px;
+}
+.game-details .submit-changes-btn {
+  display: block;
+  border: none;
+  margin: 0 auto;
+  margin-top: 4px;
+  padding: 8px;
+  border-radius: 16px;
+  background-color: #dd6031;
+  color: white;
+  font-weight: 600;
+  transition: 300ms ease-in-out;
+}
+.game-details .submit-changes-btn:hover {
+  background-color: #9d3e1c;
 }
 .game-details .edit-imgurl-input {
   display: flex;

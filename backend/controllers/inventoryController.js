@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 // GET whole inventory
 const getInventory = async (req, res) => {
   // Finds and returns all documents in the database in an array and sorts in alphabetical order
-  const inventory = await Inventory.find({}).sort({ title: 1 });
+  const inventory = await Inventory.find({}).sort({ title: 0 });
 
   res.status(200).json(inventory);
 };

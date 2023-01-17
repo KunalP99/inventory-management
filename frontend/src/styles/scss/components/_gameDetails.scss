@@ -7,6 +7,7 @@
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: $xxs-spacing;
+
     // Adds an ellipsis if the name goes over the second line
     display: -webkit-box;
     -webkit-line-clamp: 1;
@@ -57,10 +58,6 @@
 
       img {
         width: 30px;
-        transition: 400ms ease-in-out;
-      }
-      img:hover {
-        transform: ;
       }
     }
 
@@ -72,6 +69,22 @@
         width: 30px;
       }
     }
+  }
+
+  .submit-changes-btn {
+    display: block;
+    border: none;
+    margin: 0 auto;
+    margin-top: $xxs-spacing;
+    padding: $xs-spacing;
+    border-radius: 16px;
+    background-color: $accent-colour;
+    color: white;
+    font-weight: 600;
+    transition: 300ms ease-in-out;
+  }
+  .submit-changes-btn:hover {
+    background-color: $button-hover-colour;
   }
 
   .edit-imgurl-input {
