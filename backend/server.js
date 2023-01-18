@@ -18,6 +18,7 @@ app.use((req, res, next) => {
 });
 
 // Routes
+app.get("/*", (req, res) => res.send("/api/inventory"));
 app.use("/", indexRoute);
 app.use("/api/inventory", inventoryRoutes);
 

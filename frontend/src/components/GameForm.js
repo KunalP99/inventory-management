@@ -16,13 +16,16 @@ const GameForm = ({ toggleForm }) => {
     const game = { title, copies, releaseDate, imgUrl };
 
     // Fetch request to POST new data
-    const response = await fetch("http://localhost:4000/api/inventory", {
-      method: "POST",
-      body: JSON.stringify(game),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      "https://games-inventory-api.onrender.com/api/inventory",
+      {
+        method: "POST",
+        body: JSON.stringify(game),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const json = await response.json();
 
     if (!response.ok) {

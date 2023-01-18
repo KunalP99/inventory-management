@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Inventory from "./pages/Inventory";
@@ -6,7 +6,7 @@ import Inventory from "./pages/Inventory";
 function App() {
   return (
     <div className='app'>
-      <BrowserRouter>
+      <HashRouter>
         <NavBar />
         <div className='pages'>
           <Routes>
@@ -14,7 +14,7 @@ function App() {
             <Route path='/api/inventory' element={<Inventory />} />
           </Routes>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }

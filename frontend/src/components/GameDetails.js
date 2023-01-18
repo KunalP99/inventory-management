@@ -19,7 +19,7 @@ const GameDetails = ({ game }) => {
 
   const handleDelete = async () => {
     const response = await fetch(
-      `http://localhost:4000/api/inventory/${game._id}`,
+      `https://games-inventory-api.onrender.com/api/inventory/${game._id}`,
       { method: "DELETE" }
     );
 
@@ -41,7 +41,7 @@ const GameDetails = ({ game }) => {
     const changes = { title, copies, releaseDate, imgUrl };
 
     const response = await fetch(
-      `http://localhost:4000/api/inventory/${game._id}`,
+      `https://games-inventory-api.onrender.com/api/inventory/${game._id}`,
       {
         method: "PATCH",
         body: JSON.stringify(changes),

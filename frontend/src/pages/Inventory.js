@@ -9,7 +9,9 @@ const Inventory = () => {
 
   useEffect(() => {
     const fetchInventory = async () => {
-      const response = await fetch("http://localhost:4000/api/inventory");
+      const response = await fetch(
+        "https://games-inventory-api.onrender.com/api/inventory"
+      );
       const json = await response.json(); // Returns array of objects which are each of the games stored in the database
 
       // If fetch is successful then set the games array to the data that came back
