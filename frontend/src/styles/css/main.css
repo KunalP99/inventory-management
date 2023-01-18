@@ -459,15 +459,14 @@ form label {
   font-size: clamp(0.8rem, 2vw, 1.6rem);
 }
 form input {
-  padding: 4px;
   width: 100%;
-  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-size: clamp(1rem, 2vw, 1.5rem);
   border-radius: 16px;
   border: none;
   background: #f5f5f5;
   border: 1px solid #e3e3e3;
   border-radius: 16px;
-  padding: 12px;
+  padding: 20px;
 }
 form button {
   display: block;

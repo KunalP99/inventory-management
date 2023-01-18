@@ -43,7 +43,9 @@ const GameForm = ({ toggleForm }) => {
 
   return (
     <div className='test-container'>
-      <div className='darken-screen'> </div>
+      <div className='darken-screen' onClick={toggleForm}>
+        {" "}
+      </div>
       <div className='sidebar'>
         <form onSubmit={handleSubmit}>
           <div className='sidebar-top'>

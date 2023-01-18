@@ -78,15 +78,14 @@ form {
   }
 
   input {
-    padding: $xxs-spacing;
     width: 100%;
-    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-size: clamp(1rem, 2vw, 1.5rem);
     border-radius: 16px;
     border: none;
     background: #f5f5f5;
     border: 1px solid #e3e3e3;
     border-radius: 16px;
-    padding: $s-spacing;
+    padding: $md-spacing;
   }
 
   button {
