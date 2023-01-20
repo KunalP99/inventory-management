@@ -4,6 +4,7 @@ import GameDetails from "../components/GameDetails";
 import GameForm from "../components/GameForm";
 import Plus from "../images/plus.svg";
 import PulseLoader from "react-spinners/PulseLoader";
+
 const Inventory = () => {
   const { games, dispatch } = useInventoryContext();
   const [isLoading, setIsLoading] = useState(false);
@@ -27,8 +28,6 @@ const Inventory = () => {
     fetchInventory();
   }, []);
 
-  console.log(isLoading);
-
   const toggleForm = () => {
     // Change styling of toggle to translate from right to left
     const sidebar = document.querySelector(".sidebar");
@@ -42,7 +41,7 @@ const Inventory = () => {
     <div className='container'>
       <div className='heading-btn-container'>
         <h3>My Games Collection</h3>
-        <button onClick={toggleForm}>
+        <button data-test-btn='add-game-btn' onClick={toggleForm}>
           Add game
           <img src={Plus} alt='Add a new game button' />
         </button>

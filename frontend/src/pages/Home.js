@@ -9,7 +9,7 @@ const Home = () => {
         <div>
           <h2>Take control of your games, never misplace a title again.</h2>
           <div className='action-btn-container'>
-            <Link className='action-btn' to={"/api/inventory"}>
+            <Link data-test-btn="inventory-btn"  className='action-btn' to={"/api/inventory"}>
               Your Inventory
             </Link>
           </div>

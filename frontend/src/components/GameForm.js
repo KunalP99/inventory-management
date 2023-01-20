@@ -46,9 +46,7 @@ const GameForm = ({ toggleForm }) => {
 
   return (
     <div className='test-container'>
-      <div className='darken-screen' onClick={toggleForm}>
-        {" "}
-      </div>
+      <div className='darken-screen' onClick={toggleForm}></div>
       <div className='sidebar'>
         <form onSubmit={handleSubmit}>
           <div className='sidebar-top'>
@@ -64,6 +62,7 @@ const GameForm = ({ toggleForm }) => {
                 id='title'
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
+                name='title'
                 required
               />
             </div>
@@ -75,6 +74,7 @@ const GameForm = ({ toggleForm }) => {
                 id='copies'
                 onChange={(e) => setCopies(e.target.value)}
                 value={copies}
+                name='copies'
                 required
               />
             </div>
@@ -86,6 +86,7 @@ const GameForm = ({ toggleForm }) => {
                 id='releaseDate'
                 onChange={(e) => setReleaseDate(e.target.value)}
                 value={releaseDate}
+                name='releaseDate'
                 required
               />
             </div>
@@ -96,10 +97,11 @@ const GameForm = ({ toggleForm }) => {
                 type='text'
                 id='imgUrl'
                 onChange={(e) => setImgUrl(e.target.value)}
+                name='imgUrl'
                 value={imgUrl}
               />
             </div>
-            <button>Add Game</button>
+            <button data-test-btn="form-add-game">Add Game</button>
           </div>
 
           {error && <div className='error'>ERROR</div>}

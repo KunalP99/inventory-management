@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <header>
       <div className='container'>
-        <Link to='/'>
+        <Link data-test-btn='home-btn' to='/'>
           <img src={Logo} alt='Logo' />
           <h1>
             Games Inventory<span>_</span>
