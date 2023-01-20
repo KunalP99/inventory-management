@@ -7,6 +7,8 @@ import PulseLoader from "react-spinners/PulseLoader";
 
 const Inventory = () => {
   const { games, dispatch } = useInventoryContext();
+
+  // Checks to see if data is still being fetched from database
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -28,6 +30,7 @@ const Inventory = () => {
     fetchInventory();
   }, []);
 
+  // Show and hides form when button is clicked
   const toggleForm = () => {
     // Change styling of toggle to translate from right to left
     const sidebar = document.querySelector(".sidebar");

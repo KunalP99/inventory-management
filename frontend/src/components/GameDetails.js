@@ -6,6 +6,7 @@ import Delete from "../images/delete.svg";
 import UnknownCover from "../images/unknown-cover.svg";
 
 const GameDetails = ({ game }) => {
+  // Format release date of each game
   const formattedReleaseDate = moment(game.releaseDate).format("YYYY-MM-DD");
 
   const [title, setTitle] = useState(game.title);
@@ -13,7 +14,6 @@ const GameDetails = ({ game }) => {
   const [releaseDate, setReleaseDate] = useState(formattedReleaseDate);
   const [imgUrl, setImgUrl] = useState(game.imgUrl);
 
-  // Format release date of each game
   const { dispatch } = useInventoryContext();
   const [showEdit, setShowEdit] = useState(false);
 

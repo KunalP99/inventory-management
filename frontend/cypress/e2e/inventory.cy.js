@@ -6,7 +6,6 @@ describe("Inventory page", () => {});
 
 describe("Sidebar", () => {
   it("opens sidebar when button is pressed and renders all labels", () => {
-    //data-test-btn='add-game-btn'
     cy.get("[data-test-btn='add-game-btn']").click();
     cy.contains("Add a new game");
     cy.contains("Game Title:");
@@ -19,7 +18,6 @@ describe("Sidebar", () => {
 
 describe("Inventory page to Home page", () => {
   it("renders the home page once button is clicked", () => {
-    // data-test-btn='home-btn'
     cy.get("[data-test-btn='home-btn']").click();
     cy.contains("Take control of your games, never misplace a title again.");
   });

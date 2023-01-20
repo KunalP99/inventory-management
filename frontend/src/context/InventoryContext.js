@@ -11,12 +11,13 @@ export const inventoryReducer = (state, action) => {
         games: action.payload,
       };
 
-    // Add a new value into the games array
+    // Add a new element into the games array
     case "CREATE_GAME":
       return {
         games: [action.payload, ...state.games],
       };
 
+    // Delete a element from the games array
     case "DELETE_GAME":
       return {
         games: state.games.filter((game) => game._id !== action.payload._id),
@@ -33,7 +34,7 @@ export const InventoryContextProvider = ({ children }) => {
     games: null,
     showModal: false,
   });
-  // All components will have access to state and dispatch
+  // All components will have access to 'state' and 'dispatch'
   return (
     <InventoryContext.Provider value={{ ...state, dispatch }}>
       {children}
