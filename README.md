@@ -1,7 +1,7 @@
 # Inventory Management
 An inventory management website where you can add games to a database and manage them via the website.
 
-This is my first full-stack project using Express for the backend and MongoDB for the database. I learnt alot about how the backend works and it's given more clarity to full-stack applications.
+This is my first independent full-stack project using Express for the backend and MongoDB for the database. I learnt alot about how the backend works and it's given more clarity to full-stack applications.
 
 ## Features
 - Add a game to the database 
