@@ -1,4 +1,4 @@
-# [Games Inventory](https://games-inventory.onrender.com/) 🎮
+# [Games Inventory](https://games-inventory.onrender.com/) <img width="30px" src="https://user-images.githubusercontent.com/65904106/222926307-0f732174-bc90-4410-ab84-bf84fb5fdf0d.png" />
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
